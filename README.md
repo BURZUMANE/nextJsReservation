@@ -1,5 +1,5 @@
 # nextJsReservation
 
-git clone 
+git clone https://github.com/BURZUMANE/nextJsReservation.git
 
 yarn or npm run dev
