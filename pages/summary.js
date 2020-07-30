@@ -47,7 +47,7 @@ export default function Summary() {
   };
   const startTime = new Date(resrvationDates.checkIn).toLocaleTimeString();
   const startDate = new Date(resrvationDates.checkIn).toLocaleDateString();
-  console.log(location);
+
   return (
     <Card>
       <CardContent>

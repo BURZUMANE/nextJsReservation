@@ -26,6 +26,7 @@ const persistedReducer = persistReducer(persistConfig, mainReducer);
 const store = configureStore({
   reducer: persistedReducer,
   middleware: [...getDefaultMiddleware({ serializableCheck: false })],
+  devTools: process.env.NODE_ENV !== 'production',
 });
 
 export default store;

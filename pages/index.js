@@ -67,9 +67,7 @@ const IndexPage = () => {
           }}
         >
           {({ isSubmitting, values, setFieldValue, errors }) => {
-            console.log(values.endDate);
             const dates = useSelector((state) => state.reservation.dates);
-            console.log(dates.endDate);
             if (dates.startDate !== '') {
               values.startDate = new Date(dates.startDate);
             } else {
@@ -80,7 +78,6 @@ const IndexPage = () => {
             } else {
               values.endDate = new Date();
             }
-            console.log(values);
             return (
               <Form>
                 <Grid container>
@@ -113,7 +110,6 @@ const IndexPage = () => {
                         className="form-control"
                         name="endDate"
                         onChange={(date) => {
-                          console.log('dasdas');
                           dispatch(reservationSlice.actions.setEnd(date));
                           // setFieldValue('endDate', date)
                         }}
