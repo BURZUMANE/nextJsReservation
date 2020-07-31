@@ -25,10 +25,10 @@ const MyApp = ({ Component, pageProps }) => {
             name="viewport"
             content="minimum-scale=1, initial-scale=1, width=device-width"
           />
-          <script
+          {/* <script
             type="text/javascript"
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATyME8aPrEABRhIh8mtOXnfNdQ8ofNEq0&libraries=places"
-          ></script>
+          ></script> */}
         </Head>
         <ThemeProvider theme={theme}>
           <AppBar position="fixed">
@@ -36,8 +36,6 @@ const MyApp = ({ Component, pageProps }) => {
               <Typography variant="h6">Multi-Step Form</Typography>
             </Toolbar>
           </AppBar>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-          <CssBaseline />
           <CssBaseline />
           <Container>
             <Box marginTop={10}>

@@ -46,6 +46,7 @@ const Summary = () => {
   };
   const startTime = new Date(resrvationDates.checkIn).toLocaleTimeString();
   const startDate = new Date(resrvationDates.checkIn).toLocaleDateString();
+
   return (
     <Card>
       <CardContent>

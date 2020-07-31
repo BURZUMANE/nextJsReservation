@@ -68,6 +68,26 @@ export default function Adress() {
     loaded.current = true;
   }
 
+  function removeGoogleMapScript() {
+    console.debug('removing google script...');
+    let keywords = ['maps.googleapis'];
+
+    //Remove google from BOM (window object)
+    window.google = undefined;
+
+    //Remove google map scripts from DOM
+    let scripts = document.head.getElementsByTagName('script');
+    for (let i = scripts.length - 1; i >= 0; i--) {
+      let scriptSource = scripts[i].getAttribute('src');
+      if (scriptSource != null) {
+        if (keywords.filter((item) => scriptSource.includes(item)).length) {
+          scripts[i].remove();
+          // scripts[i].parentNode.removeChild(scripts[i]);
+        }
+      }
+    }
+  }
+
   const fetch = React.useMemo(
     () =>
       throttle((request, callback) => {
@@ -129,6 +149,7 @@ export default function Adress() {
             const latLng = await coords(value.adress.description);
             const location = { adress: value.adress.description, latLng };
             dispatch(reservationSlice.actions.setAdress(location));
+            removeGoogleMapScript();
             router.push('/summary');
           }}
         >
