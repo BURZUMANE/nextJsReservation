@@ -26,8 +26,7 @@ const useStyles = makeStyles({
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
 }
-
-export default function Summary() {
+const Summary = () => {
   const classes = useStyles();
   const state = useSelector((state) => state);
   const reservation = state.reservation;
@@ -47,7 +46,6 @@ export default function Summary() {
   };
   const startTime = new Date(resrvationDates.checkIn).toLocaleTimeString();
   const startDate = new Date(resrvationDates.checkIn).toLocaleDateString();
-
   return (
     <Card>
       <CardContent>
@@ -93,4 +91,6 @@ export default function Summary() {
       </CardContent>
     </Card>
   );
-}
+};
+
+export default Summary;

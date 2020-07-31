@@ -56,17 +56,17 @@ export default function Adress() {
   const [options, setOptions] = React.useState([]);
   const loaded = React.useRef(false);
 
-  // if (typeof window !== 'undefined' && !loaded.current) {
-  //   if (!document.querySelector('#google-maps')) {
-  //     loadScript(
-  //       'https://maps.googleapis.com/maps/api/js?key=AIzaSyATyME8aPrEABRhIh8mtOXnfNdQ8ofNEq0&libraries=places',
-  //       document.querySelector('head'),
-  //       'google-maps'
-  //     );
-  //   }
+  if (typeof window !== 'undefined' && !loaded.current) {
+    if (!document.querySelector('#google-maps')) {
+      loadScript(
+        'https://maps.googleapis.com/maps/api/js?key=AIzaSyATyME8aPrEABRhIh8mtOXnfNdQ8ofNEq0&libraries=places',
+        document.querySelector('head'),
+        'google-maps'
+      );
+    }
 
-  //   loaded.current = true;
-  // }
+    loaded.current = true;
+  }
 
   const fetch = React.useMemo(
     () =>
